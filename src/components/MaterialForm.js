@@ -1,4 +1,5 @@
 import React from 'react';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
 
 const rows = [
@@ -84,41 +85,59 @@ const rows = [
   }
 ];
 
+const theme = createTheme({
+  components: {
+    MuiTableCell: {
+      styleOverrides: {
+        head: { 
+          fontWeight: 'bold',
+          fontSize: '1rem',
+          lineHeight: '1.75rem',
+        },
+      },
+    },
+  },
+});
+
 const getAlignment = (value) => {
   return typeof value === 'number' ? 'right' : 'center';
-};
+}
 
-const MaterialForm = () => 
-  <form>
-    <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
-        <TableHead>
-          <TableRow>
-            <TableCell variant="head" align="center">姓名</TableCell>
-            <TableCell variant="head" align="center">Email</TableCell>
-            <TableCell variant="head" align="center">電話</TableCell>
-            <TableCell variant="head" align="center">住址</TableCell>
-            <TableCell variant="head" align="right">年齡</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {rows.map((row) => (
-            <TableRow
-                key={row.id}
-                sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-              >
-              <TableCell align={getAlignment(row.name)} variant="body">{row.name}</TableCell>
-              <TableCell align={getAlignment(row.email)} variant="body">{row.email}</TableCell>
-              <TableCell align={getAlignment(row.phone)} variant="body">{row.phone}</TableCell>
-              <TableCell align={getAlignment(row.address)} variant="body">{row.address}</TableCell>
-              <TableCell align={getAlignment(row.age)} variant="body">{row.age}</TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>  
-    </TableContainer>
-  </form>
-  ;
+const MaterialForm = () => {
+  return (
+    <form>
+      <TableContainer component={Paper}>
+        <Table sx={{ minWidth: 650 }} aria-label="simple table">
+          <ThemeProvider theme={theme}>
+            <TableHead>
+              <TableRow>
+                <TableCell align="center">Name</TableCell>
+                <TableCell align="center">電子郵件</TableCell>
+                <TableCell align="center">電話</TableCell>
+                <TableCell align="center">住址</TableCell>
+                <TableCell align="right">年齡</TableCell>
+              </TableRow>
+            </TableHead>
+          </ThemeProvider>
+          <TableBody>
+            {rows.map((row) => (
+              <TableRow
+                  key={row.id}
+                  sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                >
+                <TableCell align={getAlignment(row.name)}>{row.name}</TableCell>
+                <TableCell align={getAlignment(row.email)}>{row.email}</TableCell>
+                <TableCell align={getAlignment(row.phone)}>{row.phone}</TableCell>
+                <TableCell align={getAlignment(row.address)}>{row.address}</TableCell>
+                <TableCell align={getAlignment(row.age)}>{row.age}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>  
+      </TableContainer>
+    </form>
+  );
+};
 
 
 export default MaterialForm;

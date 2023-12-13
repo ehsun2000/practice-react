@@ -115,13 +115,13 @@ const MaterialForm = () =>
         <ThemeProvider theme={theme}>
           <TableHead>
             <TableRow>
-              <TableCell align="center">Name</TableCell>
-              <TableCell align="center">電子郵件</TableCell>
-              <TableCell align="center">電話</TableCell>
-              <TableCell align="center">住址</TableCell>
-              <TableCell align="right">年齡</TableCell>
-              <TableCell align="center">刪除</TableCell>
-              <TableCell align="center">修改</TableCell>
+              <TableCell align='center' sx={{ border: 0.1 }}>Name</TableCell>
+              <TableCell align='center' sx={{ border: 0.1 }}>電子郵件</TableCell>
+              <TableCell align='center' sx={{ border: 0.1 }}>電話</TableCell>
+              <TableCell align='center' sx={{ border: 0.1 }}>住址</TableCell>
+              <TableCell align='right' sx={{ border: 0.1 }}>年齡</TableCell>
+              <TableCell align='center' sx={{ border: 0.1 }}>刪除</TableCell>
+              <TableCell align='center' sx={{ border: 0.1 }}>修改</TableCell>
             </TableRow>
           </TableHead>
         </ThemeProvider>
@@ -129,18 +129,17 @@ const MaterialForm = () =>
           {rows.map((row) => (
             <TableRow
                 key={row.id}
-                sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
               >
-              <TableCell align={getAlignment(row.name)}>{row.name}</TableCell>
-              <TableCell align={getAlignment(row.email)}>{row.email}</TableCell>
-              <TableCell align={getAlignment(row.phone)}>{row.phone}</TableCell>
-              <TableCell align={getAlignment(row.address)}>{row.address}</TableCell>
-              <TableCell align={getAlignment(row.age)}>{row.age}</TableCell>
-              <TableCell align="right">
-                <Button variant="contained" color='error'>刪除</Button>
+              <TableCell align={getAlignment(row.name)} sx={{ border: 0.1 }}>{row.name}</TableCell>
+              <TableCell align={getAlignment(row.email)} sx={{ border: 0.1 }}>{row.email}</TableCell>
+              <TableCell align={getAlignment(row.phone)} sx={{ border: 0.1 }}>{row.phone}</TableCell>
+              <TableCell align={getAlignment(row.address)} sx={{ border: 0.1 }}>{row.address}</TableCell>
+              <TableCell align={getAlignment(row.age)} sx={{ border: 0.1 }}>{row.age}</TableCell>
+              <TableCell align='right' sx={{ border: 0.1 }}>
+                <Button variant='contained' color='error'>刪除</Button>
               </TableCell>
-              <TableCell align="right">
-                <Button variant="contained" color='info'>新增</Button>
+              <TableCell align='right' sx={{ border: 0.1 }}>
+                <Button variant='contained' color='info'>新增</Button>
               </TableCell>
             </TableRow>
           ))}

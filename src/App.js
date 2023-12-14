@@ -8,6 +8,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/material" element={<HomePage />} />
+        <Route path="/materialDialog" element={<HomePage />} />
         <Route path="/bootstrap" element={<HomePage />} />
       </Routes>
     </Router>

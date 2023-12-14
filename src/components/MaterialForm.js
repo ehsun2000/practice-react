@@ -102,12 +102,6 @@ const getAlignment = (value) => {
   return typeof value === 'number' ? 'right' : 'center';
 }
 
-const handleDelete = (id) => {
-};
-
-const handleEdit = (id) => {
-};
-
 const MaterialForm = () => 
   <form>
     <TableContainer component={Paper}>

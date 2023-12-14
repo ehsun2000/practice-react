@@ -117,8 +117,8 @@ const BootstrapForm = () =>
           </td>
           <td className='text-center align-middle'>
             {row.address}
-          <td className='text-end align-middle'>
           </td>
+          <td className='text-end align-middle'>
             {row.age}
           </td>
           <td className='text-center align-middle'>

@@ -87,7 +87,9 @@ const rows = [
 ];
 
 const BootstrapForm = () => 
+// Bootstrap Table
   <Table striped bordered hover>
+  {/* Bootstrap Head */}
     <thead>
       <tr>
         <th className='text-center'>Name</th>
@@ -100,8 +102,10 @@ const BootstrapForm = () =>
       </tr>
     </thead>
     <tbody>
+    {/* Bootstrap body */}
       {rows.map((row) => (
         <tr key={row.id}>
+          {/* 水平置中、垂直置中 */}
           <td className='text-center align-middle'>
             {row.name}
           </td>
@@ -113,11 +117,14 @@ const BootstrapForm = () =>
           </td>
           <td className='text-center align-middle'>
             {row.address}
-          </td>
           <td className='text-end align-middle'>
+          </td>
             {row.age}
           </td>
           <td className='text-center align-middle'>
+            {/* 按鈕 */}
+            {/* 顏色屬性: variant */}
+            {/* 顏色樣式: primary、secondary、success、danger、warning、info、light、dark */}
             <Button variant='danger'>刪除</Button>
           </td>
           <td className='text-center align-middle'>
